@@ -1,0 +1,23 @@
+ 	int MP = 50; 					//Measure points
+	static double RL = 1;				//Resistive Load
+	static double h11 = 2.7;			//input impedance hie
+	static double h12 = 0.00015;			//reverse voltage hre
+	static double h21 = 220;			//current gain hfe	
+	static double h22 = 18;				//output admitance hoe
+	
+	//Parameters for transistor
+	static double R_IN;					//input resistance
+	static double R_OUT; 					//output resistance
+	static double K_u;					//voltage amplification
+	static double K_i; 					//current amplification
+	static double K_p;					//power amplification
+
+
+
+
+
+ R_IN = h11 - (h12*h21*RL)/(1+(h22*RL));
+ R_OUT = 1 / (h22 - (h12*h21)/(h11+RL));
+ K_u = (-h21*RL)/(h22+(h11*h22-h12*h21)*RL);
+ K_i = h21/(1+h22*RL);
+ K_p = -K_u*K_i;  

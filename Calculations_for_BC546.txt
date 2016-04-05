@@ -1,0 +1,29 @@
+**** The calculations for transistor BC546 ****
+
+
+
+Value of internal resistance :
+
+8.697049180327868
+
+
+Value of external resistance :
+
+0.016671822900553437
+
+
+Value of voltage amplification :
+
+-1.0312467773538208
+
+
+Value of current amplification :
+
+9.836065573770492
+
+
+Value of power amplification : 
+
+10.143410924791679
+
+

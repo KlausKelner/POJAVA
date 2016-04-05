@@ -1,0 +1,29 @@
+**** The calculations for transistor BC548 ****
+
+
+
+Value of internal resistance :
+
+2.698263157894737
+
+
+Value of external resistance :
+
+0.055583096729610766
+
+
+Value of voltage amplification :
+
+-3.304940886625505
+
+
+Value of current amplification :
+
+11.578947368421053
+
+
+Value of power amplification : 
+
+38.267736581979534
+
+

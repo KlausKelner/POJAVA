@@ -18,7 +18,7 @@ public class CalculationsCollectorBaseCurrent{
     double V_BC = 1;				//Base Emitter Voltage (*Adjustable)
     double V_A;						//Forward early voltage
 	double T = 293;					//Temperature of transistor
-	double IC_Pow1 =(q*V_BE)/(k*T);	//Power factors
+	double IC_Pow1 =(q*V_BE)/(k*T);	//Power factor
 	double IC_Pow2 =(q*V_BC)/(k*T);
 	
 	double IC_Pow4;

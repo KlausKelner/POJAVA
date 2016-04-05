@@ -12,7 +12,7 @@ public class CalculationsBC548{
 	double h21 = 220;				//current gain hfe	
 	double h22 = 18;				//output admitance hoe
 	
-	//Parameters for transistor
+	//Parameters for transistors
 	double R_IN;					//input resistance
 	double R_OUT; 				//output resistance
 	double K_u;					//voltage amplification

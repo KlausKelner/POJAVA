@@ -7,7 +7,9 @@ import java.awt.FlowLayout;
 import java.awt.GraphicsConfiguration;
 import java.awt.HeadlessException;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class Main extends JFrame {
@@ -22,12 +24,31 @@ public class Main extends JFrame {
 		int yy = (int) mainPanel.getHeight();
 		mainPanel.add(panelNorth,BorderLayout.NORTH);
 		mainPanel.add(panelSouth,BorderLayout.SOUTH);
-		panelNorth.setBackground(Color.black);
-		panelSouth.setBackground(Color.yellow);
 		
-		AnimationPanel animation = new AnimationPanel();
 		panelNorth.setLayout(new FlowLayout());
+
+		AnimationPanel animation = new AnimationPanel();
 		panelNorth.add(animation);
+		
+		NewTransistorPanel transistor = new NewTransistorPanel();
+		panelNorth.add(transistor);
+		
+		panelSouth.setLayout(new FlowLayout());
+		JPanel download = new JPanel();
+		download.setPreferredSize(new Dimension(200, 260));
+		
+		JButton downloadButton = new JButton("Download data");
+		download.add(downloadButton);
+		downloadButton.setLocation(40, 40);
+		
+		panelSouth.add(download);
+		
+		ParametersLook temp = new ParametersLook();
+		temp.setPreferredSize(new Dimension(750,250));
+		JLabel tempParameters = new JLabel("Calculated parameters go here");
+		temp.add(tempParameters);
+		
+		panelSouth.add(temp);
 		
 	}
 

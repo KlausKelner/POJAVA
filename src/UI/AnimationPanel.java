@@ -23,12 +23,12 @@ public class AnimationPanel extends JPanel {
 		        public void paintComponent(Graphics g) {
 		            super.paintComponent(g);
 		            
-		            g.drawRect(20, 20, 400, 400);
+		            g.drawRect(20, 20, 380, 400);
 		        }
 		};
 		
 		PanelAnimacji panelAn = new PanelAnimacji();
-		panelAn.setPreferredSize(new Dimension(440,440));
+		panelAn.setPreferredSize(new Dimension(420,440));
 		panel.add(panelAn);
 		JPanel sliders = new JPanel();
 		panel.add(sliders);

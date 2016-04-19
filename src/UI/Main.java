@@ -20,8 +20,6 @@ public class Main extends JFrame {
 		this.add(mainPanel);
 		JPanel panelNorth = new JPanel();
 		JPanel panelSouth = new JPanel();
-		int xx = (int) mainPanel.getWidth();
-		int yy = (int) mainPanel.getHeight();
 		mainPanel.add(panelNorth,BorderLayout.NORTH);
 		mainPanel.add(panelSouth,BorderLayout.SOUTH);
 		

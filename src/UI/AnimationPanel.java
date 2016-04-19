@@ -7,7 +7,9 @@ import java.awt.GraphicsConfiguration;
 import java.awt.HeadlessException;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JSlider;
 
 public class AnimationPanel extends JPanel {
 
@@ -26,11 +28,20 @@ public class AnimationPanel extends JPanel {
 		};
 		
 		PanelAnimacji panelAn = new PanelAnimacji();
-		panelAn.setPreferredSize(new Dimension(640,460));
+		panelAn.setPreferredSize(new Dimension(440,440));
 		panel.add(panelAn);
 		JPanel sliders = new JPanel();
 		panel.add(sliders);
-		
+		JSlider uBE = new JSlider(JSlider.HORIZONTAL,0,30,0);
+		JSlider uCE = new JSlider(JSlider.HORIZONTAL,0,30,0);
+		sliders.setPreferredSize(new Dimension(200,440));
+		JLabel ube = new JLabel("U_BE");
+		JLabel uce = new JLabel("U_CE");
+		sliders.setLayout(new FlowLayout());
+		sliders.add(ube);
+		sliders.add(uBE);
+		sliders.add(uce);
+		sliders.add(uCE);
 	}
 
 }

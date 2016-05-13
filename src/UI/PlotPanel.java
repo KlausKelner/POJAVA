@@ -7,14 +7,14 @@ import java.awt.HeadlessException;
 
 import javax.swing.JPanel;
 
-public class animationPanel extends JPanel {
+public class PlotPanel extends JPanel {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public animationPanel() throws HeadlessException {
+	public PlotPanel() throws HeadlessException {
 		JPanel panel = new JPanel();
 		this.add(panel);
 		panel.setLayout(new FlowLayout());
@@ -29,12 +29,12 @@ public class animationPanel extends JPanel {
 		        public void paintComponent(Graphics g) {
 		            super.paintComponent(g);
 		            
-		            g.drawRect(0, 0,180, 170);
+		            g.drawRect(0, 0,230, 230);
 		        }
 		};
 		
 		panelPlot panelAn = new panelPlot();
-		panelAn.setPreferredSize(new Dimension(185,185));
+		panelAn.setPreferredSize(new Dimension(240,240));
 		panel.add(panelAn);
 }
 }

@@ -6,14 +6,6 @@ import javax.swing.JFrame;
 
 public class Main extends JFrame {
 
-	/**
-	 * 
-	 */
-
-		
-		/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 
@@ -25,7 +17,7 @@ public class Main extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					languageChooser window = new languageChooser();
+					LanguageChooser window = new LanguageChooser();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();

@@ -9,7 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 
-public class languageChooser {
+public class LanguageChooser {
 
 	JFrame frame;
 
@@ -20,7 +20,7 @@ public class languageChooser {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					languageChooser window = new languageChooser ();
+					LanguageChooser window = new LanguageChooser ();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -32,7 +32,7 @@ public class languageChooser {
 	/**
 	 * Create the application.
 	 */
-	public languageChooser() {
+	public LanguageChooser() {
 		initialize();
 	}
 
@@ -71,7 +71,7 @@ public class languageChooser {
 					EventQueue.invokeLater(new Runnable() {
 						public void run() {
 							try {
-								newUI window = new newUI(1);
+								NewUI window = new NewUI(1);
 								window.frame.setVisible(true);
 							} catch (Exception e) {
 								e.printStackTrace();
@@ -86,7 +86,7 @@ public class languageChooser {
 					EventQueue.invokeLater(new Runnable() {
 						public void run() {
 							try {
-								newUI window = new newUI(2);
+								NewUI window = new NewUI(2);
 								window.frame.setVisible(true);
 							} catch (Exception e) {
 								e.printStackTrace();

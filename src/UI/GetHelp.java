@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 
-public class getHelp {
+public class GetHelp {
 
 	JFrame frame;
 
@@ -18,7 +18,7 @@ public class getHelp {
 	/**
 	 * Create the application.
 	 */
-	public getHelp() {
+	public GetHelp() {
 		initialize();
 	}
 

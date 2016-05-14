@@ -14,7 +14,7 @@ import javax.swing.JButton;
 import javax.swing.JMenuItem;
 import javax.swing.JMenuBar;
 
-public class newUI {
+public class NewUI {
 	
 	String labelka = "lol";
 	JFrame frame;
@@ -35,7 +35,7 @@ public class newUI {
 	/**
 	 * Create the application.
 	 */
-	public newUI(int lang) {
+	public NewUI(int lang) {
 		initialize(lang);
 	}
 
@@ -45,7 +45,7 @@ public class newUI {
 	private void initialize(int lang) {
 		
 		
-			namesUI labels = new namesUI(lang);
+		NamesUI labels = new NamesUI(lang);
 		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 756, 400);
@@ -153,7 +153,7 @@ public class newUI {
 	    		   EventQueue.invokeLater(new Runnable() {
 	    				public void run() {
 	    					try {
-	    						getHelp window = new getHelp();
+	    						GetHelp window = new GetHelp();
 	    						window.frame.setVisible(true);
 	    					} catch (Exception e) {
 	    						e.printStackTrace();
@@ -185,11 +185,11 @@ public class newUI {
 		btnApply.setBounds(540, 229,120, 20);
 		frame.getContentPane().add(btnApply);
 		
-		plotPanel newPlot = new plotPanel();
+		PlotPanel newPlot = new PlotPanel();
 		newPlot.setBounds(10,15 , 240, 270);
 		frame.getContentPane().add(newPlot);
 		
-		animationPanel newAnim = new animationPanel();
+		AnimationPanel newAnim = new AnimationPanel();
 		newAnim.setBounds(310,147 , 185, 185);
 		frame.getContentPane().add(newAnim);
 	}

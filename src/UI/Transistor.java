@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.lang.Math;
-public class transistor {
+public class Transistor {
 	String name = "Default name transistor";
 	static double E = 2.71;
 	double Vb=0;
@@ -36,7 +36,7 @@ public class transistor {
 	double K_i=h21/(1+h22*RL);  								//current amplification
 	double K_p=-K_u*K_i; 										//power amplification
 
-	transistor(double inp_h11,double inp_h12,double inp_h21,
+	Transistor(double inp_h11,double inp_h12,double inp_h21,
 			double inp_h22,double inp_RL,double inp_Is,double inp_Vjc,double inp_Bf,double inp_Br)
 	{
 		h11=inp_h11;

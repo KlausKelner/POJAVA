@@ -2,7 +2,7 @@ package UI;
 
 import javax.swing.JFrame;
 
-public class namesUI extends JFrame {
+public class NamesUI extends JFrame {
 
 	/* List of buttons */
 	
@@ -22,7 +22,7 @@ public class namesUI extends JFrame {
 	
 
 
-	public namesUI(int a) {
+	public NamesUI(int a) {
 		if(a==1){
 			setEnglishLabels();
 		}

@@ -34,8 +34,7 @@ public class Transistor {
 	double R_OUT=1 / (h22 - (h12*h21)/(h11+RL)); 				//output resistance
 	double K_u=(-h21*RL)/(h22+(h11*h22-h12*h21)*RL);			//voltage amplification
 	double K_i=h21/(1+h22*RL);  								//current amplification
-	double K_p=-K_u*K_i;
-	double k;//power amplification
+	double K_p=-K_u*K_i;                                        //power amplification
 
 	Transistor(double inp_h11,double inp_h12,double inp_h21,
 			double inp_h22,double inp_RL,double inp_Is,double inp_Vjc,double inp_Bf,double inp_Br)

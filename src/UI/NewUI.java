@@ -1,20 +1,21 @@
 package UI;
 
-import javax.swing.JFrame;
-import javax.swing.JTextField;
-import javax.swing.JSlider;
-import javax.swing.JLabel;
-import javax.swing.JMenu;
-
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.JMenuItem;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
 import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JSlider;
+import javax.swing.JTextField;
 
 public class NewUI {
+	
+	Transistor t = new Transistor(1,1,1,1,1,0.0000000000000006734,0.75,140,4);
 	
 	String labelka = "lol";
 	JFrame frame;
@@ -99,6 +100,10 @@ public class NewUI {
 		slider_1.setBounds(310, 127, 200, 26);
 		frame.getContentPane().add(slider_1);
 		
+		JSlider slider_2 = new JSlider();
+		slider_2.setBounds(310, 187, 200, 26);
+		frame.getContentPane().add(slider_2);
+		
 		
 		/* LABELS */
 		JLabel lblNewLabel = new JLabel(labels.transName);
@@ -125,13 +130,18 @@ public class NewUI {
 		label_4.setBounds(629, 201, 88, 14);
 		frame.getContentPane().add(label_4);
 		
-		JLabel label_5= new JLabel("U_BE");
+		JLabel label_5= new JLabel("U_B");
 		label_5.setBounds(395, 37, 200, 26);
 		frame.getContentPane().add(label_5);
 		
-		JLabel label_6= new JLabel("U_CE");
+		JLabel label_6= new JLabel("U_E");
 		label_6.setBounds(395, 97, 200, 26);
 		frame.getContentPane().add(label_6);
+		
+		JLabel label_7= new JLabel("U_C");
+		label_7.setBounds(395, 157, 200, 26);
+		frame.getContentPane().add(label_7);
+		
 		
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBounds(0, 0, 740, 21);
@@ -141,8 +151,48 @@ public class NewUI {
 		menuBar.add(mnNewMenu);
 		JMenu mnoNewMenu = new JMenu(labels.edit);
 		menuBar.add(mnoNewMenu);
+		JMenu plotsNewMenu = new JMenu(labels.plots);
+		menuBar.add(plotsNewMenu);
 		JMenu mnopNewMenu = new JMenu(labels.help);
 		menuBar.add(mnopNewMenu);
+		
+		JMenuItem plots1NewMenuItem = new JMenuItem(labels.plot1);
+		plotsNewMenu.add(plots1NewMenuItem);
+		
+		plots1NewMenuItem.addActionListener(new ActionListener() {
+	    	   public void actionPerformed(ActionEvent arg0) {
+	    		
+	    		   EventQueue.invokeLater(new Runnable() {
+	    				public void run() {
+	    					
+	    					ChartPanelDemo plot1 = new ChartPanelDemo("Plot1",t);
+	    					
+	    					}
+	    				}
+	    			);
+	    		   
+	    		
+	            }
+	        });
+		
+		JMenuItem plots2NewMenuItem = new JMenuItem(labels.plot2);
+		plotsNewMenu.add(plots2NewMenuItem);
+		
+		plots2NewMenuItem.addActionListener(new ActionListener() {
+	    	   public void actionPerformed(ActionEvent arg0) {
+	    		
+	    		   EventQueue.invokeLater(new Runnable() {
+	    				public void run() {
+	    					
+	    					ChartPanelDemo plot2 = new ChartPanelDemo("Plot2",t);
+	    					
+	    					}
+	    				}
+	    			);
+	    		   
+	    		
+	            }
+	        });
 		
 		JMenuItem helpNewMenuItem = new JMenuItem(labels.getHelp);
 		mnopNewMenu.add(helpNewMenuItem);
@@ -185,12 +235,8 @@ public class NewUI {
 		btnApply.setBounds(540, 229,120, 20);
 		frame.getContentPane().add(btnApply);
 		
-		PlotPanel newPlot = new PlotPanel();
-		newPlot.setBounds(10,15 , 240, 270);
-		frame.getContentPane().add(newPlot);
-		
 		AnimationPanel newAnim = new AnimationPanel();
-		newAnim.setBounds(310,147 , 185, 185);
+		newAnim.setBounds(20,30 , 185, 185);
 		frame.getContentPane().add(newAnim);
 	}
 }

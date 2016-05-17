@@ -43,7 +43,7 @@ public class GetHelp {
 
 		frame = new JFrame();
 		frame.setBounds(100, 100,510, 300);
-		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();

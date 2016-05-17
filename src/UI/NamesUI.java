@@ -18,7 +18,9 @@ public class NamesUI extends JFrame {
 	String help;
 	String apply;
 	String getHelp;
-	
+	String plots;
+	String plot1;
+	String plot2;
 	
 
 
@@ -43,6 +45,9 @@ public class NamesUI extends JFrame {
 		help="Help";
 		apply="Apply";
 		getHelp="Info";
+		plots = "Plots";
+		plot1 = "Name of plot 1";
+		plot2 = "Name of plot 2";
 	}
 	void setPolishLabels(){
 		file="Plik";
@@ -56,6 +61,8 @@ public class NamesUI extends JFrame {
 		help="Pomoc";
 		apply="Zatwierdz";
 		getHelp="Info";
-		
+		plots = "Wykresy";		
+		plot1 = "Nazwa wykresu 1";
+		plot2 = "Nazwa wykresu 2";
 	}
 }

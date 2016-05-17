@@ -8,7 +8,7 @@ public class Transistor {
 	String name = "Default name transistor";
 	static double E = 2.71;
 	double Vb=0;
-	double Vc=0;					// Emiter, collector, base voltage
+	double Vc=1;					// Emiter, collector, base voltage
 	double Ve=0;
 	
 	double Vbe = Vb-Ve;					
@@ -29,12 +29,13 @@ public class Transistor {
 	//double I2 = (Is/Bf)*Math.pow(E,(Vbe/Vjc - 1));						//(Is/Bf)*E^(Vbe/Vjc - 1)
 	//double I3 = Is*(Math.pow(E,(Vbe/Vjc - 1))-Math.pow(E,(Vbc/Vjc - 1)));	//Is*(E^(Vbe/Vjc) - E^(Vbc/Vjc))
 	
-	//Parameters for transistor
+	//Parameters for transistors
 	double R_IN=h11 - (h12*h21*RL)/(1+(h22*RL));				//input resistance
 	double R_OUT=1 / (h22 - (h12*h21)/(h11+RL)); 				//output resistance
 	double K_u=(-h21*RL)/(h22+(h11*h22-h12*h21)*RL);			//voltage amplification
 	double K_i=h21/(1+h22*RL);  								//current amplification
-	double K_p=-K_u*K_i; 										//power amplification
+	double K_p=-K_u*K_i;
+	double k;//power amplification
 
 	Transistor(double inp_h11,double inp_h12,double inp_h21,
 			double inp_h22,double inp_RL,double inp_Is,double inp_Vjc,double inp_Bf,double inp_Br)
@@ -115,10 +116,33 @@ public class Transistor {
 			Vbe = Vbe+0.01;
 			double tmpIc = getIc();
 			System.out.println(Vbe+";"+tmpIc);
-			
 		}
 	}
-	
+	void incVb(double step)
+	{
+		Vb=Vb+step;
+		setVbe();
+		setVbc();
 	}
+	void incVc(double step)
+	{
+		Vc=Vc+step;
+		setVbc();
+	}
+	void incVe(double step)
+	{
+		Ve=Ve+step;
+		setVbe();
+	}
+	void setVbe()
+	{
+		Vbe = Vb - Ve;
+	}
+	void setVbc()
+	{
+		Vbe = Vb - Vc;
+	}
+	}
+
 		
 

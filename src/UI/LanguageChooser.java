@@ -41,6 +41,7 @@ public class LanguageChooser {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setTitle("POJAVA");
 		frame.setBounds(100, 100, 238, 142);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);

@@ -19,8 +19,12 @@ public class AnimationPanel extends JPanel {
 	 	
 	private int xB=15;
 	private int yC=15;
-	private int yE=105;
-	    
+	private int yE=155;
+	
+	private boolean animateB=true;
+	private boolean animateC=true;
+	private boolean animateE=true;
+
 	private static final long serialVersionUID = 1L;
 
 	public AnimationPanel() throws HeadlessException {
@@ -43,19 +47,47 @@ public class AnimationPanel extends JPanel {
 		            g.drawLine(100, 70, 100, 100);
 		            g.drawLine(100, 80, 120, 65);
 		            g.drawLine(100, 90, 120, 105);
-		            g.drawLine(120, 65, 120, 15);
-		            g.drawLine(120, 105, 120, 155);
-		            for(int ii = 0; ii<8; ii++){
-		            	g.setColor(Color.blue);
-		                g.fillOval(xB+ii*10, 82, 5, 5);
+		            g.drawLine(120, 65, 120, 15); // collector cord
+		            g.drawLine(120, 105, 120, 155); //emitter cord
+		            g.setColor(Color.blue);
+		            int xBTemp=xB;
+		            int yCTemp=yC;
+		            int yETemp=yE;
+		            while(animateB){
+		            	g.fillOval(xBTemp, 82, 5, 5);
+		            	xBTemp+=15;
+		            	if(xBTemp>=100){
+		            		xBTemp=(xB-15)%10+15;
+		            		while(xBTemp<xB){
+		            			g.fillOval(xBTemp, 82, 5, 5);
+		            			xBTemp+=15;
+		            		}
+		            		animateB=false;
+		            	}
 		            }
-		            for(int ii = 0; ii<5; ii++){
-		            	g.setColor(Color.blue);
-		                g.fillOval(118, yC+ii*10, 5, 5);
+		            while(animateC){
+		            	g.fillOval(118, yCTemp, 5, 5);
+		            	yCTemp+=15;
+		            	if(yCTemp>=65){
+		            		yCTemp=(yC-15)%10+15;
+		            		while(yCTemp<yC){
+		            			g.fillOval(118, yCTemp, 5, 5);
+		            			yCTemp+=15;
+		            		}
+		            		animateC=false;
+		            	}
 		            }
-		            for(int ii = 0; ii<5; ii++){
-		            	g.setColor(Color.blue);
-		                g.fillOval(118, yE+ii*10, 5, 5);
+		            while(animateE){
+		            	g.fillOval(118, yETemp, 5, 5);
+		            	yETemp-=15;
+		            	if(yETemp<=105){
+		            		yETemp=155-(155-yE)%10;
+		            		while(yETemp>yE){
+		            			g.fillOval(118, yETemp, 5, 5);
+		            			yETemp-=15;
+		            		}
+		            		animateE=false;
+		            	}
 		            }
 		        }
 		};
@@ -72,13 +104,21 @@ public class AnimationPanel extends JPanel {
 	                    @Override
 	                    public void run() {
 	                    	xB+=velocityB;
+	                    	animateB=true;
+	                    	if(xB>=100)xB=15;
+	                    	
 	                    	yC+=velocityC;
-	                    	yE+=velocityE;
-	                    	if(xB+8*10>=100)xB=0;
-	                       repaint();
+	                    	animateC=true;
+	                    	if(yC>=65)yC=15;
+	                    	
+	                    	yE-=velocityE;
+	                    	animateE=true;
+	                    	if(yE<=105)yE=155;
+	                    	
+	                       panelAn.repaint();
 	                    }
 	                });
 	            }
-	        }, 10, 20 );
+	        }, 10, 50 );
 }
 }

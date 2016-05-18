@@ -92,17 +92,17 @@ public class NewUI {
 		
 		/* SLIDERS */
 		
-		JSlider slider = new JSlider();
-		slider.setBounds(310,67 , 200, 26);
-		frame.getContentPane().add(slider);
+		JSlider sliderUB = new JSlider();
+		sliderUB.setBounds(310,67 , 200, 26);
+		frame.getContentPane().add(sliderUB);
 		
-		JSlider slider_1 = new JSlider();
-		slider_1.setBounds(310, 127, 200, 26);
-		frame.getContentPane().add(slider_1);
+		JSlider sliderUC = new JSlider();
+		sliderUC.setBounds(310, 127, 200, 26);
+		frame.getContentPane().add(sliderUC);
 		
-		JSlider slider_2 = new JSlider();
-		slider_2.setBounds(310, 187, 200, 26);
-		frame.getContentPane().add(slider_2);
+		JSlider sliderUE = new JSlider();
+		sliderUE.setBounds(310, 187, 200, 26);
+		frame.getContentPane().add(sliderUE);
 		
 		
 		/* LABELS */

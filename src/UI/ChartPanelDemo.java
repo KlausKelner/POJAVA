@@ -59,11 +59,11 @@ public class ChartPanelDemo {
             (XYLineAndShapeRenderer) plot.getRenderer();
         renderer.setBaseShapesVisible(true);
         
-        NumberFormat currency = NumberFormat.getIntegerInstance();
-        currency.setMaximumFractionDigits(1);
+        NumberFormat int1 = NumberFormat.getIntegerInstance();
+        int1.setMaximumFractionDigits(1);
         
         NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
-        rangeAxis.setNumberFormatOverride(currency);
+        rangeAxis.setNumberFormatOverride(int1);
         
         return new ChartPanel(chart);
     }

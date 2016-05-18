@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
 public class AnimationPanel extends JPanel {
-
+	
 	private int velocityB = 2;
 	private int velocityC = 2;
 	private int velocityE = 2;

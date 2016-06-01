@@ -24,7 +24,7 @@ public class ChartPanelDemo {
 	
     private static String title = "POJAVA Projekt Tranzystor";
     private ChartPanel chartPanel = createChart();
-    private static Transistor t = new Transistor(1,1,1,1,1,0.0000000000000006734,0.75,140,4);
+    private static Transistor t = new Transistor(/*1,1,1,1,*/1,0.0000000000000006734,0.75,140,4);
     public ChartPanelDemo(String title,Transistor t) {
         JFrame f = new JFrame(title);
         f.setTitle(title);

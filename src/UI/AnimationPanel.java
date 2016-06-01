@@ -13,13 +13,15 @@ import javax.swing.SwingUtilities;
 
 public class AnimationPanel extends JPanel {
 
+	//private int panelWidth;
+	
 	private int velocityB = 2;
 	private int velocityC = 2;
 	private int velocityE = 2;
 	 	
 	private int xB=15;
 	private int yC=15;
-	private int yE=155;
+	private int yE=105;
 	
 	private boolean animateB=true;
 	private boolean animateC=true;
@@ -28,21 +30,21 @@ public class AnimationPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 
 	public AnimationPanel() throws HeadlessException {
-	
+		
 		    
 		JPanel panel = new JPanel();
 		this.add(panel);
 		panel.setLayout(new FlowLayout());
 		
 		class PanelPlot extends JPanel{
-		 
+			private int panelWidth=(int)(this.getPreferredSize().width);
 			private static final long serialVersionUID = 1L;
 
 			@Override
 		        public void paintComponent(Graphics g) {
 		            super.paintComponent(g);
 		            
-		            g.drawRect(0, 0,180, 170);
+		            g.drawRect(0, 0,180, 180);
 		            g.drawLine(15, 85, 100, 85); //cord to base
 		            g.drawLine(100, 70, 100, 100);
 		            g.drawLine(100, 80, 120, 65);
@@ -79,12 +81,12 @@ public class AnimationPanel extends JPanel {
 		            }
 		            while(animateE){
 		            	g.fillOval(118, yETemp, 5, 5);
-		            	yETemp-=15;
-		            	if(yETemp<=105){
-		            		yETemp=155-(155-yE)%10;
-		            		while(yETemp>yE){
+		            	yETemp+=15;
+		            	if(yETemp>=155){
+		            		yETemp=(yE-105)%10+105;
+		            		while(yETemp<yE){
 		            			g.fillOval(118, yETemp, 5, 5);
-		            			yETemp-=15;
+		            			yETemp+=15;
 		            		}
 		            		animateE=false;
 		            	}
@@ -111,9 +113,9 @@ public class AnimationPanel extends JPanel {
 	                    	animateC=true;
 	                    	if(yC>=65)yC=15;
 	                    	
-	                    	yE-=velocityE;
+	                    	yE+=velocityE;
 	                    	animateE=true;
-	                    	if(yE<=105)yE=155;
+	                    	if(yE>=155)yE=105;
 	                    	
 	                       panelAn.repaint();
 	                    }

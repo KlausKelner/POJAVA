@@ -36,20 +36,19 @@ public class Transistor {
 	double K_i=h21/(1+h22*RL);  								//current amplification
 	double K_p=-K_u*K_i;                                        //power amplification
 
-	Transistor(double inp_h11,double inp_h12,double inp_h21,
-			double inp_h22,double inp_RL,double inp_Is,double inp_Vjc,double inp_Bf,double inp_Br)
+	Transistor(/*double inp_h11,double inp_h12,double inp_h21,
+			double inp_h22,*/double inp_RL,double inp_Is,double inp_Vjc,double inp_Bf,double inp_Br)
 	{
-		h11=inp_h11;
+		/*h11=inp_h11;
 		h12=inp_h12;
 		h21=inp_h21;
-		h22=inp_h22;
+		h22=inp_h22;*/
 		RL =inp_RL;
 		Is=inp_Is;
 		Vjc=inp_Vjc;
 		Bf=inp_Bf;
 		Br=inp_Br;
 	}
-	
 	
 	
 	double getR_IN()

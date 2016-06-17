@@ -31,10 +31,6 @@ public class AnimationPanel extends JPanel {
 
 	public AnimationPanel() throws HeadlessException {
 		
-		    
-		JPanel panel = new JPanel();
-		this.add(panel);
-		panel.setLayout(new FlowLayout());
 		
 		class PanelPlot extends JPanel{
 			private int panelWidth=(int)(this.getPreferredSize().width);
@@ -96,7 +92,7 @@ public class AnimationPanel extends JPanel {
 		
 		PanelPlot panelAn = new PanelPlot();
 		panelAn.setPreferredSize(new Dimension(185,185));
-		panel.add(panelAn);
+		add(panelAn);
 		
 		 Timer timer = new Timer(true);
 	     timer.scheduleAtFixedRate(new TimerTask() {

@@ -1,4 +1,3 @@
-package UI;
 
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
@@ -12,22 +11,6 @@ import javax.swing.JLabel;
 public class LanguageChooser {
 
 	JFrame frame;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					LanguageChooser window = new LanguageChooser ();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the application.

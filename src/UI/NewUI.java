@@ -1,4 +1,4 @@
-package UI;
+
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -77,13 +77,11 @@ public class NewUI {
 		
 		JLabel lblNewLabel = new JLabel(labels.transName);
 		lblNewLabel.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 0));
-		//lblNewLabel.setBounds(629, 46, 88, 14);
 		fieldsAndLabels.add(lblNewLabel);
 		
 		textField = new JTextField(); //IS
 		textField.setText("0");
 		textField.setColumns(10);
-		//textField.setBounds(540, 74, 75, 20);
 		fieldsAndLabels.add(textField);
 		
 		JLabel label = new JLabel("IS");
@@ -94,7 +92,6 @@ public class NewUI {
 		textField_2 = new JTextField();  //B_F
 		textField_2.setText("0");
 		textField_2.setColumns(10);
-		//textField_2.setBounds(540, 105, 75, 20);
 		fieldsAndLabels.add(textField_2);
 		
 		JLabel label_1 = new JLabel("B_F");
@@ -105,18 +102,15 @@ public class NewUI {
 		textField_3 = new JTextField(); //B_R
 		textField_3.setText("0");
 		textField_3.setColumns(10);
-		//textField_3.setBounds(540, 136, 75, 20);
 		fieldsAndLabels.add(textField_3);
 		
 		JLabel label_2 = new JLabel("B_R ");
 		label_2.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 0));
-		//label_2.setBounds(629, 139, 88, 14);
 		fieldsAndLabels.add(label_2);
 		
 		textField_4 = new JTextField(); //R_L
 		textField_4.setText("0");
 		textField_4.setColumns(10);
-		//textField_4.setBounds(540, 167, 75, 20);
 		fieldsAndLabels.add(textField_4);
 		
 		JLabel label_3 = new JLabel("R_L");
@@ -169,13 +163,10 @@ public class NewUI {
 	    
 		
 		JLabel label_6= new JLabel("U_C");
-		//label_6.setBounds(395, 97, 200, 26);
 		sliders.add(label_6);
-		//JLabel label_6a= new JLabel("I_C = " + t.getIc());
 		
 		
 		JSlider sliderUC = new JSlider(JSlider.HORIZONTAL,0,99,0);
-		//sliderUC.setBounds(310, 127, 200, 26);
 		sliderUC.setMinorTickSpacing(1);
 		sliderUC.setMajorTickSpacing(10);
 		sliderUC.setPaintLabels(true);
@@ -198,13 +189,10 @@ public class NewUI {
 		
 		
 		JLabel label_7= new JLabel("U_E");
-		//label_7.setBounds(395, 157, 200, 26);
 		sliders.add(label_7);
-		//JLabel label_7a= new JLabel("I_E = " + t.getIe());
 		
 		
 		JSlider sliderUE = new JSlider(JSlider.HORIZONTAL,0,99,0);
-		//sliderUE.setBounds(310, 187, 200, 26);
 		sliderUE.setMinorTickSpacing(1);
 		sliderUE.setMajorTickSpacing(10);
 		sliderUE.setPaintLabels(true);
@@ -295,23 +283,7 @@ public class NewUI {
 	        });
 		
 		
-		
-		//JMenuItem mntmNewMenuItem = new JMenuItem(labels.save);
-		//mnNewMenu.add(mntmNewMenuItem);
-		
-		//JMenuItem mntmNewMenuItem_1 = new JMenuItem(labels.export);
-		//mnNewMenu.add(mntmNewMenuItem_1);
-		
-		//JMenuItem mntmNewMenuItem_2 = new JMenuItem(labels.quit);
-		//mnNewMenu.add(mntmNewMenuItem_2);
-
-		
-		/*JButton btnGetData = new JButton(labels.results);
-		btnGetData.setBounds(540, 327, 180, 23);
-		frame.getContentPane().add(btnGetData);*/
-		
 		JButton btnApply = new JButton(labels.apply);
-		//btnApply.setBounds(540, 229,120, 20);
 		btnApply.addActionListener(new ActionListener() {
 			
 			@Override
@@ -336,8 +308,6 @@ public class NewUI {
 		});
 		texts.add(btnApply, BorderLayout.SOUTH);
 		
-		
-		//newAnim.setBounds(20,30 , 185, 185);
 
 		centre.add(newAnim);
 		centre.add(sliders);

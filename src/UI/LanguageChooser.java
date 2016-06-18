@@ -46,10 +46,7 @@ public class LanguageChooser {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JButton btnOk = new JButton("OK");
-		btnOk.setBounds(10, 69, 89, 23);
-		frame.getContentPane().add(btnOk);
-		
+				
 		JButton btnQuit = new JButton("Quit");
 		btnQuit.setToolTipText("Quits the program");
 		btnQuit.setBounds(123, 69, 89, 23);
@@ -78,6 +75,7 @@ public class LanguageChooser {
 					EventQueue.invokeLater(new Runnable() {
 						public void run() {
 							try {
+								frame.dispose();
 								NewUI window = new NewUI(1);
 								window.frame.setVisible(true);
 							} catch (Exception e) {
@@ -93,6 +91,7 @@ public class LanguageChooser {
 					EventQueue.invokeLater(new Runnable() {
 						public void run() {
 							try {
+								frame.dispose();
 								NewUI window = new NewUI(2);
 								window.frame.setVisible(true);
 							} catch (Exception e) {

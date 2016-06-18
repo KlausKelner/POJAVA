@@ -20,12 +20,12 @@ import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 
 
-public class ChartPanelDemo {
+public class ChartPanelUceIb {
 	
-    private static String title = "POJAVA Projekt Tranzystor";
+    private static String title = "POJAVA Projekt Tranzystor Uce / Ib";
     private ChartPanel chartPanel = createChart();
-    private static Transistor t = new Transistor(1,1,1,1,1,0.0000000000000006734,0.75,140,4);
-    public ChartPanelDemo(String title,Transistor t) {
+    private static Transistor t = new Transistor(/*1,1,1,1,*/1,0.0000000000000006734,0.75,140,4);
+    public ChartPanelUceIb(String title,Transistor t) {
         JFrame f = new JFrame(title);
         f.setTitle(title);
        
@@ -50,7 +50,7 @@ public class ChartPanelDemo {
     	
         XYDataset roiData = createDataset(t);
         JFreeChart chart = ChartFactory.createXYLineChart(title,
-        		"U_BE", "I_C", roiData); 
+        		"U_CE", "I_C", roiData); 
         
         XYPlot plot = chart.getXYPlot();
         plot.setBackgroundPaint(Color.WHITE);
@@ -59,32 +59,35 @@ public class ChartPanelDemo {
             (XYLineAndShapeRenderer) plot.getRenderer();
         renderer.setBaseShapesVisible(true);
         
-        NumberFormat int1 = NumberFormat.getIntegerInstance();
-        int1.setMaximumFractionDigits(1);
+        NumberFormat ints = NumberFormat.getIntegerInstance();
+        ints.setMaximumFractionDigits(1);
         
         NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
-        rangeAxis.setNumberFormatOverride(int1);
+        rangeAxis.setNumberFormatOverride(ints);
         
         return new ChartPanel(chart);
     }
 
     private XYDataset createDataset(Transistor t) {
         XYSeriesCollection tsc = new XYSeriesCollection();
-        tsc.addSeries(createSeries("Data",t));
+        tsc.addSeries(createSeries2("U_be = 50V",t));
+        
         return tsc;
     }
 
-    private XYSeries createSeries(String name,Transistor t) {
+
+    private XYSeries createSeries2(String name,Transistor t) {
         XYSeries series = new XYSeries(name);
         
-        	int s = 1000;
+        	int s = 100;
      		for(int ii=0; ii<=s; ii++)
      		{
-     			t.incVb(0.05);
-     			t.Vc = 10;
+     			t.Vb=500;
+     			t.incVc(0.05);
+     			t.Ve = 0;
      			double tmpIc = t.getIc();
-     			series.add(t.Vbe,tmpIc);
-     			System.out.print(t.Vbe);
+     			series.add(t.Vce,tmpIc);
+     			//System.out.print(t.Vce+"\n");
      		}
             
         
@@ -96,7 +99,7 @@ public class ChartPanelDemo {
 
             @Override
             public void run() {
-                ChartPanelDemo cpd = new ChartPanelDemo(title,t);
+                ChartPanelUceIb cpd = new ChartPanelUceIb(title,t);
             }
         });
     }

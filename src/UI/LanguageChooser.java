@@ -54,6 +54,12 @@ public class LanguageChooser {
 		btnQuit.setToolTipText("Quits the program");
 		btnQuit.setBounds(123, 69, 89, 23);
 		frame.getContentPane().add(btnQuit);
+		 btnQuit.addActionListener( new ActionListener() {
+             public void actionPerformed(ActionEvent arg0) {
+            	 System.exit(0);
+             }
+		 });
+		
 		
 		JComboBox<String> comboBox = new JComboBox<String>();
 		comboBox.setBounds(10, 30, 202, 20);
